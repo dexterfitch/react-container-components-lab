@@ -42,6 +42,6 @@ describe('<MovieReviews />', () => {
   });
 
   it('should render all the reviews', () => {
-    expect(wrapper.find('.review').length).to.equal(testReviews.length);
+    expect(mount(<MovieReviews reviews={testReviews} />).find('.review').length).to.equal(testReviews.length);
   });
 });
