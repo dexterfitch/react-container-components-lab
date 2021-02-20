@@ -87,3 +87,14 @@ documentation](http://developer.nytimes.com/movie_reviews_v2.json#/Documentation
 - [_New York Times_ Movie Reviews API Documentation](http://developer.nytimes.com/movie_reviews_v2.json#/Documentation)
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/react-container-components-lab'>Container Components Lab</a> on Learn.co and start learning to code for free.</p>
+
+
+## Notes
+
+Title: results.display_title
+Film Rating: results.mpaa_rating
+Critic's Pick: results.critics_pick (1 for true, 0 for false)
+Description: results.summary_short
+Opening Date: results.opening_date
+URL to poster: results.multimedia.src
+URL to article: results.link.url
