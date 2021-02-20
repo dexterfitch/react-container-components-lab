@@ -9,11 +9,11 @@ const URL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?'
 export default class SearchableMovieReviewsContainer extends Component {
   state = {
     reviews: [],
-    searchString: ""
+    searchTerm: ""
   }
 
-  fetch = (searchString) => {
-    fetch(URL + "&query=" + searchString)
+  fetch = (searchTerm) => {
+    fetch(URL + "&query=" + searchTerm)
     .then(res => res.json())
     .then(data => this.checkData(data))
   }
@@ -42,23 +42,23 @@ export default class SearchableMovieReviewsContainer extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.fetch(this.state.searchString)
+    this.fetch(this.state.searchTerm)
   }
 
   handleChange = (event) => {
     this.setState({
-      searchString: event.target.value
+      searchTerm: event.target.value
     })
   }
 
   render() {
-    let moviesFound = this.state.movies
+    let moviesFound = this.state.reviews
     let renderObject
 
     if (moviesFound === "No Search Results Found") {
-      renderObject = <div><h3>{ this.state.movies }</h3><hr /></div>
+      renderObject = <div><h3>{ this.state.reviews }</h3><hr /></div>
     } else {
-      renderObject = <MovieReviews movies={ this.state.movies } />
+      renderObject = <MovieReviews reviews={ this.state.reviews } />
     }
 
     return (
